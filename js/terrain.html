@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>Terrain</title>
+    </head>
+    <body style='background: #000'>
+        <div style='color:#fff' id="result"></div>
+        <canvas id='display' width='1' height='1' />
+
+<script type="text/javascript" src="terrain.js"></script>
+        <script type="text/javascript">
+            Terrain.prototype.draw = function (ctx, width, height) {
+                var self = this;
+                var waterVal = this.size * 0.3;
+
+                for (var y = 0; y < this.size; y++) {
+                    for (var x = 0; x < this.size; x++) {
+                        var val = this.get(x, y);
+                        var top = project(x, y, val);
+                        var bottom = project(x + 1, y, 0);
+                        var water = project(x, y, waterVal);
+                        var style = brightness(x, y, this.get(x + 1, y) - val);
+
+                        rect(top, bottom, style);
+                        rect(water, bottom, 'rgba(50, 150, 200, 0.15)');
+                    }
+                }
+
+                function rect(a, b, style) {
+                    if (b.y < a.y)
+                        return;
+                    ctx.fillStyle = style;
+                    ctx.fillRect(a.x, a.y, b.x - a.x, b.y - a.y);
+                }
+
+                function brightness(x, y, slope) {
+                    if (y === self.max || x === self.max)
+                        return '#000';
+                    var b = ~~(slope * 50) + 128;
+                    return ['rgba(', b, ',', b, ',', b, ',1)'].join('');
+                }
+
+                function iso(x, y) {
+                    return {
+                        x: 0.5 * (self.size + x - y),
+                        y: 0.5 * (x + y)
+                    };
+                }
+
+                function project(flatX, flatY, flatZ) {
+                    var point = iso(flatX, flatY);
+                    var x0 = width * 0.5;
+                    var y0 = height * 0.2;
+                    var z = self.size * 0.5 - flatZ + point.y * 0.75;
+                    var x = (point.x - self.size * 0.5) * 6;
+                    var y = (self.size - point.y) * 0.005 + 1;
+
+                    return {
+                        x: x0 + x / y,
+                        y: y0 + z / y
+                    };
+                }
+            };
+
+            var display = document.getElementById('display');
+            var ctx = display.getContext('2d');
+            var width = display.width = 1900;
+            var height = display.height = 1000
+
+            timetodraw = new Date().getTime();
+            terrain.draw(ctx, width, height);
+            timetodraw = new Date().getTime()-timetodraw;
+            document.getElementById("result").textContent = "timetocalc(msec): "+Math.round(timetocalc)+ " timetodraw(msec): "+Math.round(timetodraw);
+
+        </script>
+    </body>
+</html>
