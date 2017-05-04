@@ -30,11 +30,11 @@ Chrome     |   22
 wasm  chrome    |   44 
 wasm  firefox    |   55
 
-soft version
-openjdk version "9-internal"
-Chrome 58.0
-Firefox 52.1
-gcc-5
+soft version: 
+openjdk version "9-internal", 
+Chrome 58.0, 
+Firefox 52.1, 
+gcc-5, 
 Emscripten 1.37.9
 
 
