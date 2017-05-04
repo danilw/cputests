@@ -1,9 +1,10 @@
+package cputest;
+
 public class basic {
 
     public static void main(String[] args) {
         long timetocalc = System.currentTimeMillis();
-        char[] str=new char[50000];
-        //String str = "";
+        String str = "";
         System.out.println("Start!!!");
         for (long i = 0; i < 50000000L; i++) {
             Math.sqrt((double) i);
@@ -13,9 +14,9 @@ public class basic {
             string = string.concat(" kaka pipi"); // "Kaka pipi" is a kind of childly call in Dutch. 
             string = new String(string.toUpperCase());
             if (i % 300 == 0) {
-                str = "".toCharArray();
+                str = "";
             } else {
-                str = (str+Long.toHexString(i)).toCharArray();
+                str=str.concat(Long.toHexString(i));
             }
         }
         timetocalc = System.currentTimeMillis() - timetocalc;
