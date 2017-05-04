@@ -12,10 +12,10 @@ tester     | timetocalc(msec) | timetodraw(msec)
 firefox |   30-60      | 1000
 js45   | 17-35         | --
 Chrome     |   200-250       | 800-900
- java    |    170-220      | 2200-3000
- C++    |    10-50      | 250-350
-wasm  chrome    |   50-60       | 1200-1500
-wasm  firefox    |  30-35       | 800-1000
+ java    |    170-220      | 2200-3000 Graphics2D
+ C++    |    10-50      | 250-350 cairo
+wasm  chrome    |   50-60       | 1200-1500 sdl
+wasm  firefox    |  30-35       | 800-1000 sdl
 
 
 **basic**- simple memory copy, string concat, number to string
