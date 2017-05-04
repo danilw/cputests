@@ -25,7 +25,7 @@ wasm  firefox  sdl  |  30-35       | 800-1000
 tester     | timetocalc(sec) 
 -------- | ----------- 
 firefox |  15
-js45   | 17-35   
+js45   | 15  
 Chrome     |   22
  java    |    20
  C    |    11   
