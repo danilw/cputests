@@ -3,6 +3,8 @@ wasm/js/java/C CPU tests
 
 **what is it**- *typical game-engine logic, speed tests*
 
+todo- animated real time fractal  render
+
 ### Result
 
 **terrain** - recursion with lambda expressions in logic, and draw 2d map
