@@ -3,7 +3,7 @@ wasm/js/java/C CPU tests
 
 **what is it**- *typical game-engine logic, speed tests*
 
-todo- animated real time fractal  render
+*todo* - software 3d scene render
 
 ### Result
 
