@@ -1,7 +1,9 @@
 ###html/web
+
 open *.html file in webbrowser(or upload to you webserver) it will work, no extra actions needed
 
 ###native gcc compiler
+
 **basic**
 ```
 gcc -lm -O2 basic.c -o basic
@@ -14,7 +16,7 @@ g++ -pthread -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/
 ```
 g++ Ground.cpp Intersection.cpp IObject.cpp main.cpp Main_c.cpp Material.cpp Materials.cpp RandomDoubles.cpp RandomRays.cpp Sphere.cpp Vec.cpp -pthread -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libdrm -I/usr/include/libpng16 -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lfontconfig -lfreetype -lgthread-2.0 -pthread -lglib-2.0 -lcairo -std=c++11 -O3 -o render
 ```
-##WebAssembly Emscripten compiler
+###WebAssembly Emscripten compiler
 
 **basic**
 ```
