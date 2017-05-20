@@ -32,6 +32,7 @@ emcc -lm -O2 basic.c -s WASM=1 -o basic.html
 em++ -std=c++11 -O2 terrain.cpp -s WASM=1 -o terrain.html
 ```
 **render**
+
 copy two files **wasm/render/main.cpp** and **wasm/render/Main_c.cpp** to **C/render/**
 mvoe to **C/render/** and build
 ```
@@ -48,6 +49,7 @@ js45 terrain.js
 
 
 **render:**
+
 edit **render/Main.js** file, comment(/**/) line from 268 to 271 (full "rowCompleted" function logic)
 create "render_no_draw.js"
 write:
