@@ -44,15 +44,19 @@ js45
 --------------------
 
 **basic and terrain**
+
 js45 basic.js
+
 js45 terrain.js
 
 
 
 **render:**
 
-edit **render/Main.js** file, comment(/**/) line from 268 to 271 (full "rowCompleted" function logic)
+edit **render/Main.js** file, comment(/* */) line from 268 to 271 (full "rowCompleted" function logic)
+
 create "render_no_draw.js"
+
 write:
 ```
 load("Ground.js")
