@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>render</title>
+
+<body>
+    
+<div style='color:#FF0000' id="result">Wait...</div>
+
+<canvas id="myCanvas" width="30" height="15" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script type="text/javascript" src="js_base.js">
+</script>
+<script type="text/javascript" src="Vec.js">
+</script>
+<script type="text/javascript" src="Sphere.js">
+</script>
+<script type="text/javascript" src="RandomRays.js">
+</script>
+<script type="text/javascript" src="RandomDoubles.js">
+</script>
+<script type="text/javascript" src="Material.js">
+</script>
+<script type="text/javascript" src="Materials.js">
+</script>
+<script type="text/javascript" src="Intersection.js">
+</script>
+<script type="text/javascript" src="Ground.js">
+</script>
+<script type="text/javascript" src="Main.js">
+</script>
+
+<script>
+
+
+
+var c = document.getElementById("myCanvas");
+c.setAttribute("width",""+Main.WIDTH);
+c.setAttribute("height",""+Main.HEIGHT);
+
+js_main= new Main();
+js_main.image = c.getContext("2d");
+var timetocalc = new Date().getTime();
+js_main.launch();
+timetocalc = new Date().getTime() - timetocalc;
+document.getElementById("result").textContent = "timetocalc(msec): " + timetocalc;
+
+</script>
+
+</body>
+</html>
