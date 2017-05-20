@@ -77,4 +77,5 @@ timetocalc = new Date().getTime() - timetocalc;
 console.log("timetocalc(msec): " + timetocalc);
 ```
 save "render_no_draw.js" and launch
+
 js45 render_no_draw.js
