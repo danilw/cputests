@@ -1,11 +1,24 @@
-wasm/js/java/C CPU tests
+wasm/js/java/C++ CPU tests
 -
 
 **what is it**- *typical game-engine logic, speed tests*
 
-*todo* - software 3d scene render
+*todo* - 2d dinamic animation
 
 ### Result
+
+**render** - 3d scene render with shadows and reflection (software(CPU) render without GPU)
+
+tester     | timetocalc(sec) 
+-------- | ----------- 
+firefox |  367 (6.1 min)
+js45   |   387 (6.5 min)
+chrome     |   410 (6.8 min)
+ java    |    28
+ C++    |    21   
+wasm  chrome    |   41 
+wasm  firefox    |   34
+
 
 **terrain** - recursion with lambda expressions in logic, and draw 2d map
 
@@ -13,7 +26,7 @@ tester     | timetocalc(msec) | timetodraw(msec)
 -------- | ----------- | ---
 firefox |   30-60      | 1000
 js45   | 17-35         | --
-Chrome     |   200-250       | 800-900
+chrome     |   200-250       | 800-900
  java  Graphics2D  |    170-220      | 2200-3000 
  C++  cairo  |    10-50      | 250-350 
 wasm  chrome  sdl  |   50-60       | 1200-1500 
@@ -26,7 +39,7 @@ tester     | timetocalc(sec)
 -------- | ----------- 
 firefox |  15
 js45   | 15  
-Chrome     |   22
+chrome     |   22
  java    |    20
  C    |    11   
 wasm  chrome    |   44 
@@ -40,16 +53,8 @@ gcc-5,
 Emscripten 1.37.9
 
 
-build options
--
+###Building
+**read**  [build_readme.md](build_readme.md)
 
-gcc -lm -O2 **basic.c**
-
-g++ -pthread -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libdrm -I/usr/include/libpng16 -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lfontconfig -lfreetype -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lcairo -std=c++11 -O2 **terrain.cpp**
-
-**javascript**  to disable firefox optimization and slow js45 to Chrome/v8 speed (10x slow) (then *timetocalc* will be same like Chrome/v8)
-
-js45 --no-cgc --no-ggc --ion-offthread-compile=off --ion-osr=off --ion-inlining=off --ion-range-analysis=off
-
-
-**Emscripten** -O1/2/3 they do nothing
+###Graphic
+![test](test.png)
