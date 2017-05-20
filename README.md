@@ -3,7 +3,7 @@ wasm/js/java/C++ CPU tests
 
 **what is it**- *typical game-engine logic, speed tests*
 
-*todo* - 2d dinamic animation
+*todo* - 2d dynamic animation
 
 ### Result
 
