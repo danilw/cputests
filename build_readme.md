@@ -34,7 +34,8 @@ em++ -std=c++11 -O2 terrain.cpp -s WASM=1 -o terrain.html
 **render**
 
 copy two files **wasm/render/main.cpp** and **wasm/render/Main_c.cpp** to **C/render/**
-mvoe to **C/render/** and build
+
+move to **C/render/** and build
 ```
 em++ Ground.cpp Intersection.cpp IObject.cpp main.cpp Main_c.cpp Material.cpp Materials.cpp RandomDoubles.cpp RandomRays.cpp Sphere.cpp Vec.cpp -std=c++11 -O3 -s WASM=1 -o render.html
 ```
