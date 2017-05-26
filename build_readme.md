@@ -43,9 +43,11 @@ em++ Ground.cpp Intersection.cpp IObject.cpp main.cpp Main_c.cpp Material.cpp Ma
 js45 
 --------------------
 
-**basic and terrain**
+uncomment line 18 in **basic**.js
 
 js45 basic.js
+
+uncomment line 86 in  **terrain**.js
 
 js45 terrain.js
 
