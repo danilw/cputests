@@ -15,4 +15,4 @@ var timetocalc = new Date().getTime();
                 }
             }
             timetocalc = new Date().getTime() - timetocalc;
-            console.log("timetocalc(msec): " + timetocalc);
+            //console.log("timetocalc(msec): " + timetocalc);
