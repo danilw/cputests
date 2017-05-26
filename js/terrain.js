@@ -83,4 +83,4 @@
             var terrain = new Terrain(9);
             terrain.generate(0.7);
             timetocalc = new Date().getTime()-timetocalc;
-            console.log("timetocalc(msec): "+Math.round(timetocalc));
+            //console.log("timetocalc(msec): "+Math.round(timetocalc));
