@@ -390,6 +390,7 @@ void putpixel(SDL_Surface *surface, int x, int y, Uint32 pixel) {
             putpixel(screen, i, rowIndex, SDL_MapRGB(screen->format, (pixels[i] >> 16), ((pixels[i] >> 8)-((pixels[i] >> 16) << 8)), ((pixels[i])-((pixels[i] >> 8) << 8))));
         }
         SDL_UnlockSurface(screen);
+        SDL_Flip(screen);
 
     }
 };
