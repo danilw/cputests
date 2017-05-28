@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <title>render_mini</title>
+    <meta charset="UTF-8">
+
+    <body>
+
+        <div style='color:#000' >Control: <b>1</b> or <b>2</b> change scene, <b>Q</b> or <b>E</b> rotate camera, <b>W</b> or <b>S</b> scroll speed, <b>A</b> or <b>D</b> tilt camera</div>
+
+        <div style='color:#FF0000' id="result">Wait...</div>
+
+        <canvas tabindex='1' id="myCanvas" width="30" height="15" style="border:1px solid #d3d3d3;" onkeypress="return processKeyEvent(event)">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+        <script type="text/javascript" src="render_mini.js">
+        </script>
+
+        <script>
+
+            var c = document.getElementById("myCanvas");
+            c.setAttribute("width", "" + (Gg2.viewWidth * Gg2.viewScaleX));
+            c.setAttribute("height", "" + (Gg2.viewHeight * Gg2.viewScaleY));
+
+            image = c.getContext("2d");
+
+
+            function processKeyEvent(e) {
+                Gg2.keyDown[window.event ? event.keyCode : e.which] = true;
+
+                if (Gg2.keyDown[Gg2.key_1]) {
+                    Gg2.keyDown[Gg2.key_1] = false;
+                    Gg2.scene = 1;
+
+                }
+                if (Gg2.keyDown[Gg2.key_2]) {
+                    Gg2.keyDown[Gg2.key_2] = false;
+                    Gg2.scene = 2;
+
+                }
+
+                if (Gg2.keyDown[Gg2.key_W]) {
+                    Gg2.keyDown[Gg2.key_W] = false;
+                    Gg2.speed = (Gg2.speed < 0.3) ? Gg2.speed + 0.05 : 0.35;
+
+                }
+
+                if (Gg2.keyDown[Gg2.key_S]) {
+                    Gg2.keyDown[Gg2.key_S] = false;
+                    Gg2.speed = (Gg2.speed > 0.06) ? Gg2.speed - 0.05 : 0;
+
+                }
+                if (Gg2.keyDown[Gg2.key_A]) {
+                    Gg2.keyDown[Gg2.key_A] = false;
+                    if (Gg2.rightm == 0) {
+                        Gg2.leftm = (Gg2.leftm < 0.9) ? Gg2.leftm + 0.08 : 0.91;
+                    } else {
+                        Gg2.rightm = ((Gg2.rightm - 0.08) > 0) ? Gg2.rightm - 0.08 : 0;
+                    }
+                }
+
+                if (Gg2.keyDown[Gg2.key_D]) {
+                    Gg2.keyDown[Gg2.key_D] = false;
+                    if (Gg2.leftm == 0) {
+                        Gg2.rightm = (Gg2.rightm < 0.9) ? Gg2.rightm + 0.08 : 0.91;
+                    } else {
+                        Gg2.leftm = ((Gg2.leftm - 0.08) > 0) ? Gg2.leftm - 0.08 : 0;
+                    }
+                }
+
+                if (Gg2.keyDown[Gg2.key_Q]) {
+                    Gg2.keyDown[Gg2.key_Q] = false;
+                    Gg2.zz = (Gg2.zz < 0.0055) ? Gg2.zz + 0.0005 : 0.006;
+                }
+
+                if (Gg2.keyDown[Gg2.key_E]) {
+                    Gg2.keyDown[Gg2.key_E] = false;
+                    Gg2.zz = ((Gg2.zz - 0.0005) > -0.0055) ? Gg2.zz -= 0.0005 : -0.006;
+                }
+                return true;
+            }
+
+            function js_draw() {
+                for (var i = 0; i < Gg2.viewWidth; i++) {
+                    for (var j = 0; j < Gg2.viewHeight; j++) {
+                        for (var o_y = 0; o_y < Gg2.viewScaleY; ++o_y)
+                            for (var o_x = 0; o_x < Gg2.viewScaleX; ++o_x) {
+                                image.fillStyle = "rgb(" + (Gg2.pixels[j * Gg2.viewWidth + i] >> 16) + "," + ((Gg2.pixels[j * Gg2.viewWidth + i] >> 8) - ((Gg2.pixels[j * Gg2.viewWidth + i] >> 16) << 8)) + "," + ((Gg2.pixels[j * Gg2.viewWidth + i]) - ((Gg2.pixels[j * Gg2.viewWidth + i] >> 8) << 8)) + ")";
+                                image.fillRect(Gg2.viewScaleX * i + o_x, Gg2.viewScaleY * j + o_y, 1, 1);
+                            }
+                    }
+                }
+                document.getElementById("result").textContent = "fps:" + fps + " , timetocalc:" + Gg2.frame_timetocalc + " ,  max:" + Gg2.max_timetocalc + " , min:" + Gg2.min_timetocalc;
+                Gg2.start();
+            }
+            js_draw();
+            setInterval(js_draw, 0);
+
+        </script>
+
+
+
+    </body>
+</html>
