@@ -7,7 +7,7 @@ wasm/js/java/C++ CPU tests
 
 ### Result
 
-**render_mini** - animated(live move camera) 3d scene render (software(CPU) render without GPU)
+**render_mini** - animated(live move camera) 3d scene render (software(CPU) render without GPU))
 
 Camera control (in all versions same):1 or 2 change scene, Q or E rotate camera, W or S scroll speed, A or D tilt camera
 
@@ -24,7 +24,7 @@ wasm  chrome    |   120-150 (fps 6)
 wasm  firefox    |   150-200 (fps 4)
 
 
-**render** - 3d scene render with shadows and reflection (software(CPU) render without GPU)
+**render** - 3d scene render with shadows and reflection (software(CPU) render without GPU))
 
 tester     | timetocalc(sec) 
 -------- | ----------- 
