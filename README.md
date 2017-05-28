@@ -72,4 +72,5 @@ Emscripten 1.37.9
 **read**  [build_readme.md](build_readme.md)
 
 ### Graphic
+![testmini](testmini.jpg)
 ![test](test.png)
