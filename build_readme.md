@@ -18,6 +18,11 @@ g++ -pthread -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/
 ```
 g++ Ground.cpp Intersection.cpp IObject.cpp main.cpp Main_c.cpp Material.cpp Materials.cpp RandomDoubles.cpp RandomRays.cpp Sphere.cpp Vec.cpp -pthread -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libdrm -I/usr/include/libpng16 -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lfontconfig -lfreetype -lgthread-2.0 -pthread -lglib-2.0 -lcairo -std=c++11 -O3 -o render
 ```
+**render_mini**
+```
+g++ -pthread -I/usr/include/X11 -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libdrm -I/usr/include/libpng16 -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lfontconfig -lfreetype -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lcairo -lX11 -std=c++11 -O3 render_mini.cpp -o render_mini
+```
+
 WebAssembly Emscripten compiler
 --------------------
 
@@ -40,20 +45,28 @@ move to **C/render/** and build
 em++ Ground.cpp Intersection.cpp IObject.cpp main.cpp Main_c.cpp Material.cpp Materials.cpp RandomDoubles.cpp RandomRays.cpp Sphere.cpp Vec.cpp -std=c++11 -O3 -s WASM=1 -o render.html
 ```
 
+**render_mini**
+```
+em++ -std=c++11 -O3 render_mini.cpp -s WASM=1 -o render_mini.html
+```
+
 js45 
 --------------------
 
-uncomment line 18 in **basic**.js
+**basic**
+
+uncomment line 18 in *basic.js*
 
 js45 basic.js
 
-uncomment line 86 in  **terrain**.js
+**terrain**
+
+uncomment line 86 in  *terrain.js*
 
 js45 terrain.js
 
 
-
-**render:**
+**render**
 
 edit **render/Main.js** file, comment(/* */) line from 268 to 271 (full "rowCompleted" function logic)
 
@@ -81,3 +94,11 @@ console.log("timetocalc(msec): " + timetocalc);
 save "render_no_draw.js" and launch
 
 js45 render_no_draw.js
+
+
+**render_mini**
+
+uncomment line 170 and 343 in *render_mini.js* 
+
+js45 render_mini.js
+
