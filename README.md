@@ -3,9 +3,24 @@ wasm/js/java/C++ CPU tests
 
 **what is it**- *Comparison of calculation speed and drawing speed*
 
-*todo* - 2d dynamic animation
+*todo* - OpenGL drawing test(or game)
 
 ### Result
+
+**render_mini** - animated(live move camera) 3d scene render (software(CPU) render without GPU)
+
+Camera control (in all versions same):1 or 2 change scene, Q or E rotate camera, W or S scroll speed, A or D tilt camera
+
+tester     | timetocalc(msec) 
+-------- | ----------- 
+firefox |  700-1000
+js45   |  1000-1200
+chrome     |  5500-6500
+ java    |    90-210 (fps 8)
+ C++    |    80-120 (fps 8)
+wasm  chrome    |   120-150 (fps 6)
+wasm  firefox    |   150-200 (fps 4)
+
 
 **render** - 3d scene render with shadows and reflection (software(CPU) render without GPU)
 
