@@ -180,7 +180,6 @@ Gg2.run = function () {
 
 
     var moveDir = new Vec(1.5, Gg2.zz, 0.8);
-    var tmp66666 = new Vec(10000.5, Gg2.zz, 55555550.8);
     var cameraPos = moveDir.multiply(Gg2.lastatime);
     var cameraLookAt = cameraPos.add(moveDir).add(new Vec(0 + Gg2.rightm, 0.8 - Gg2.zz * 500, 0.5 + Gg2.leftm));
     var cameraUp = new Vec(0 + Gg2.rightm / 3, 1.0, 0 + Gg2.leftm / 3);
