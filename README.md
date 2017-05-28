@@ -11,7 +11,7 @@ wasm/js/java/C++ CPU tests
 
 Camera control (in all versions same):1 or 2 change scene, Q or E rotate camera, W or S scroll speed, A or D tilt camera
 
-Edit *viewWidth* and *viewHeight* for change render resolution (current for test 300x200) also *viewScaleX/Y* to set image Scale
+Edit *viewWidth* and *viewHeight* for change render resolution (current for test 300x200) also *viewScaleX/Y* to set image Scale, *disable_ani* to True will disable animations.
 
 tester     | timetocalc(msec) 
 -------- | ----------- 
