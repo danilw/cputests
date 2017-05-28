@@ -345,4 +345,4 @@ Gg2.run = function () {
 
 }
 
-Gg2.start();
+//Gg2.start();
