@@ -5,6 +5,16 @@ wasm/js/java/C++ CPU tests
 
 *todo* - OpenGL drawing test(or game)
 
+### Live test
+
+name     | wasm | javascript
+-------- | ----------- | ---
+basic |   [wasm_basic](https://danilw.github.io/cputests/wasm/basic/basic.html)      | [js_basic](https://danilw.github.io/cputests/js/basic.html)
+terrain   | [wasm_terrain](https://danilw.github.io/cputests/wasm/terrain/terrain.html)        | [js_terrain](https://danilw.github.io/cputests/js/terrain.html)
+render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/render.html)      |  [js_render](https://danilw.github.io/cputests/js/render/render.html)    
+ render_mini  |     [wasm_render_mini](https://danilw.github.io/cputests/wasm/render_mini/render_mini.html)      |  [js_render_mini](https://danilw.github.io/cputests/js/render_mini.html)
+
+
 ### Result
 
 **render_mini** - animated(live move camera) 3d scene render (software(CPU) render without GPU))
