@@ -23,6 +23,11 @@ g++ Ground.cpp Intersection.cpp IObject.cpp main.cpp Main_c.cpp Material.cpp Mat
 g++ -pthread -I/usr/include/X11 -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libdrm -I/usr/include/libpng16 -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lfontconfig -lfreetype -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lcairo -lX11 -std=c++11 -O3 render_mini.cpp -o render_mini
 ```
 
+**opengl_basic**
+```
+g++ -lGL -lGLU -lglut -std=c++11 opengl_basic.cpp -O3 -o opengl_basic
+```
+
 WebAssembly Emscripten compiler
 --------------------
 
@@ -48,6 +53,11 @@ em++ Ground.cpp Intersection.cpp IObject.cpp main.cpp Main_c.cpp Material.cpp Ma
 **render_mini**
 ```
 em++ -std=c++11 -O3 render_mini.cpp -s WASM=1 -o render_mini.html
+```
+
+**opengl_basic**
+```
+em++ opengl_basic.cpp -std=c++11 -O3 -s LEGACY_GL_EMULATION=1 -s WASM=1 -o opengl_basic.html
 ```
 
 js45 
