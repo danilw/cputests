@@ -19,6 +19,7 @@ GLfloat l_pos[] = {-0.005, 0.0005, 0.0, 0.0};
 
 const int WIDTH = 1920;
 const int HEIGHT = 1080;
+int oncept = 0;
 int dotsscale = 1000; // dots array scale, 100^(x), example 100 1000 10000 1000000 etc
 int dots = M_PI*dotsscale; // Pi*1000=3142
 float rotateradius = 1;
@@ -505,7 +506,11 @@ void DrawGLScene() {
     glTranslatef(0.0f, 0.0f, -7.0f);
     display();
     glutSwapBuffers();
-    std::cout << "fps: " << fps << "\n";
+    oncept++;
+    if (oncept > 5) {
+        oncept = 0;
+        std::cout << "fps: " << fps << "\n";
+    }
     numFrames++;
     std::chrono::duration<double> delta = std::chrono::duration_cast<std::chrono::duration<double>> (std::chrono::high_resolution_clock::now() - lastFpsTime);
     if (delta.count() > frameRateSmoothing) {
