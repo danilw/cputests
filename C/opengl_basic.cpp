@@ -411,9 +411,6 @@ void display(void) {
         glColor3f(((function.rotatex > 0 ? function.rotatex : -1 * function.rotatex) / 14.0),
                 ((function.rotatey > 0 ? function.rotatey : -1 * function.rotatey) / 14.0),
                 ((function.rotatez > 0 ? function.rotatez : -1 * function.rotatez) / 14.0));
-        /*glColor3f(function.xaxis * .225 + (1 / (rand() % 100 + 1)),
-                function.yaxis * .225,
-                function.zaxis * .225 + (1 / (rand() % 100 + 1)));*/
 
         glRotated(r / (100 / rotateradius), function.rotatex, function.rotatey, function.rotatez);
 
