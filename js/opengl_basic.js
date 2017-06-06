@@ -615,16 +615,27 @@ var render = function () {
         axis.normalize();
         idle_func();
         renderer.render(scene, camera);
-        numFrames++;
+        stats.update();
+        /*numFrames++;
         var delta = (Date.now() - lastFpsTime) / 1000;
         if (delta > frameRateSmoothing) {
             fps = Math.round(numFrames / delta);
             numFrames = 0;
             lastFpsTime = Date.now();
-        }
+        }*/
     }
 
 };
+
+		var container = document.createElement('div');
+        document.body.appendChild(container);
+        document.body.style.margin = 0;
+        document.body.style.overflow = 'hidden';
+        var stats = new Stats();
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.top = '0px';
+        stats.domElement.style.right = '0px';
+        container.appendChild(stats.domElement);
 
 display();
 
