@@ -13,11 +13,24 @@ basic |   [wasm_basic](https://danilw.github.io/cputests/wasm/basic/basic.html) 
 terrain   | [wasm_terrain](https://danilw.github.io/cputests/wasm/terrain/terrain.html)        | [js_terrain](https://danilw.github.io/cputests/js/terrain.html)
 render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/render.html)      |  [js_render](https://danilw.github.io/cputests/js/render/render.html)    
  render_mini  |     [wasm_render_mini](https://danilw.github.io/cputests/wasm/render_mini/render_mini.html)      |  [js_render_mini](https://danilw.github.io/cputests/js/render_mini.html)
+  opengl_basic  |     [wasm_opengl_basic](https://danilw.github.io/cputests/wasm/opengl_basic/opengl_basic.html)      |  [js_opengl_basic](https://danilw.github.io/cputests/js/opengl_basic.html)
 
 
 ### Result
 
-**render_mini** - animated(live move camera) 3d scene render (software(CPU) render without GPU))
+**opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points). **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
+
+tester     | fps (final scene fps first)
+-------- | ----------- 
+firefox |  4-15
+chrome     |   10-30
+ java    |    25-50
+ C++    |    35-80   
+wasm  chrome    |   10-18 
+wasm  firefox    |   10-14
+
+
+**render_mini(CPU)** - animated(live move camera) 3d scene render (software(CPU) render without GPU))
 
 Camera control (in all versions same):1 or 2 change scene, Q or E rotate camera, W or S scroll speed, A or D tilt camera
 
@@ -34,7 +47,7 @@ wasm  chrome    |   120-150 (fps 6)
 wasm  firefox    |   150-200 (fps 4)
 
 
-**render** - 3d scene render with shadows and reflection (software(CPU) render without GPU))
+**render(CPU)** - 3d scene render with shadows and reflection (software(CPU) render without GPU))
 
 tester     | timetocalc(sec) 
 -------- | ----------- 
@@ -47,7 +60,7 @@ wasm  chrome    |   41
 wasm  firefox    |   34
 
 
-**terrain** - recursion with lambda expressions in logic, and draw 2d map
+**terrain(CPU)** - recursion with lambda expressions in logic, and draw 2d map
 
 tester     | timetocalc(msec) | timetodraw(msec)
 -------- | ----------- | ---
@@ -60,7 +73,7 @@ wasm  chrome  sdl  |   50-60       | 1200-1500
 wasm  firefox  sdl  |  30-35       | 800-1000 
 
 
-**basic**- simple memory copy, string concat, number to string
+**basic(CPU)**- simple memory copy, string concat, number to string
 
 tester     | timetocalc(sec) 
 -------- | ----------- 
