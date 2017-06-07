@@ -3,7 +3,7 @@ wasm/js/java/C++ CPU tests
 
 **what is it**- *Comparison of calculation speed and drawing speed*
 
-*todo* - OpenGL drawing test(or game)
+*todo* - one more OpenGL test(or game)
 
 ### Live test
 
