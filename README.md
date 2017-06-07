@@ -98,6 +98,6 @@ Emscripten 1.37.9
 
 ### Graphic
 
-[![opengl_basic](http://img.youtube.com/vi/405yudjksDA/0.jpg)](http://www.youtube.com/watch?v=405yudjksDA)
+[![opengl_basic](testoglyt.png)](http://www.youtube.com/watch?v=405yudjksDA)
 ![testmini](testmini.jpg)
 ![test](test.png)
