@@ -12,7 +12,7 @@ import org.lwjgl.opengl.DisplayMode;
 import java.nio.FloatBuffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-
+//LWJGL 2.9.3
 
 public class opengl_basic {
 
