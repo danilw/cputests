@@ -18,7 +18,7 @@ render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/re
 
 ### Result
 
-**opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points). **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
+**opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points), without GLSL. **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
 
 tester     | fps (final scene fps first)
 -------- | ----------- 
