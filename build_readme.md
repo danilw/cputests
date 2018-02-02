@@ -28,6 +28,11 @@ g++ -pthread -I/usr/include/X11 -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/incl
 g++ -lGL -lGLU -lglut -std=c++11 opengl_basic.cpp -O3 -o opengl_basic
 ```
 
+**sgame**
+```
+g++ -O3 -lglut -lGLEW -lGL -lm -lGLU -Wall -Wextra -pthread main.cpp
+```
+
 WebAssembly Emscripten compiler
 --------------------
 
@@ -58,6 +63,11 @@ em++ -std=c++11 -O3 render_mini.cpp -s WASM=1 -o render_mini.html
 **opengl_basic**
 ```
 em++ opengl_basic.cpp -std=c++11 -O3 -s LEGACY_GL_EMULATION=1 -s WASM=1 -o opengl_basic.html
+```
+
+**sgame**
+```
+em++ -std=c++11 -O3 main_wasm.cpp -s USE_WEBGL2=1 -s FULL_ES3=1 -s WASM=1 -o sgame.html --preload-file ./fs
 ```
 
 js45 
