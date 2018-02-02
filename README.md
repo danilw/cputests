@@ -20,8 +20,9 @@ sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/
 
 ### Result
 
-**sgame(GPU+CPU)** - very simple game using GLSL without textures, control: **F** fullscreen, **W A S D** - move, mouse scroll or **1/2** - zoom in/out, **SPACE** to jump from planets, **R** reset zoom, **P** pause, **Left/Right mouse** shoot. Work very vell in wasm, native C++ program has better "image quality"(because GL_ES in browsers). Normal has max 3 noise loops, Best 5 noise loops.
+**sgame(GPU+CPU)** - very simple game using GLSL without textures, control: **F** fullscreen, **W A S D** - move, mouse scroll or **1/2** - zoom in/out, **SPACE** to jump from planets, **R** reset zoom, **P** pause, **Left/Right mouse** shoot.  Normal has max 3 noise loops, Best 5 noise loops.
 
+*Work very well in wasm, native C++ program has better "image quality"(because GL_ES in browsers).*
 
 **opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points), without GLSL. **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
 
