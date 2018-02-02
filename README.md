@@ -9,13 +9,13 @@ wasm/js/java/C++ CPU tests
 
 name     | wasm | javascript
 -------- | ----------- | ---
-
 basic |   [wasm_basic](https://danilw.github.io/cputests/wasm/basic/basic.html)      | [js_basic](https://danilw.github.io/cputests/js/basic.html)
 terrain   | [wasm_terrain](https://danilw.github.io/cputests/wasm/terrain/terrain.html)        | [js_terrain](https://danilw.github.io/cputests/js/terrain.html)
-render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/render.html) |  [js_render](https://danilw.github.io/cputests/js/render/render.html)    
+render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/render.html)      |  [js_render](https://danilw.github.io/cputests/js/render/render.html)    
  render_mini  |     [wasm_render_mini](https://danilw.github.io/cputests/wasm/render_mini/render_mini.html)      |  [js_render_mini](https://danilw.github.io/cputests/js/render_mini.html)
   opengl_basic  |     [wasm_opengl_basic](https://danilw.github.io/cputests/wasm/opengl_basic/opengl_basic.html)      |  [js_opengl_basic](https://danilw.github.io/cputests/js/opengl_basic.html)
-
+sgame(normal) |  [wasm_sgame n](https://danilw.github.io/cputests/wasm/sgame/normal/sgame.html)   | (latter)
+sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)  | (latter)
  
 
 ### Result
