@@ -3,20 +3,25 @@ wasm/js/java/C++ CPU tests
 
 **what is it**- *Comparison of calculation speed and drawing speed*
 
-*todo* - one more OpenGL test(or game)
+*todo* - this is done, new projects next
 
 ### Live test
 
 name     | wasm | javascript
 -------- | ----------- | ---
+
 basic |   [wasm_basic](https://danilw.github.io/cputests/wasm/basic/basic.html)      | [js_basic](https://danilw.github.io/cputests/js/basic.html)
 terrain   | [wasm_terrain](https://danilw.github.io/cputests/wasm/terrain/terrain.html)        | [js_terrain](https://danilw.github.io/cputests/js/terrain.html)
 render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/render.html)      |  [js_render](https://danilw.github.io/cputests/js/render/render.html)    
  render_mini  |     [wasm_render_mini](https://danilw.github.io/cputests/wasm/render_mini/render_mini.html)      |  [js_render_mini](https://danilw.github.io/cputests/js/render_mini.html)
   opengl_basic  |     [wasm_opengl_basic](https://danilw.github.io/cputests/wasm/opengl_basic/opengl_basic.html)      |  [js_opengl_basic](https://danilw.github.io/cputests/js/opengl_basic.html)
-
+sgame(normal) |   [wasm_sgame n](https://danilw.github.io/cputests/wasm/sgame/normal/sgame.html)      | ----
+sgame(best) |   [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)      | ----
 
 ### Result
+
+**sgame(GPU+CPU)** - very simple game using GLSL without textures, control: **F** fullscreen, **W A S D** - move, mouse scroll or **1/2** - zoom in/out, **SPACE** to jump from planets, **R** reset zoom, **P** pause, **Left/Right mouse** shoot. Work very vell in wasm, native C++ program has better "image quality"(because GL_ES in browsers). Normal has max 3 noise loops, Best 5 noise loops.
+
 
 **opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points), without GLSL. **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
 
