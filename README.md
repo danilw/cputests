@@ -20,7 +20,7 @@ sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/
 
 ### Result
 
-**sgame(GPU+CPU)** - very simple game using GLSL without textures, control: **F** fullscreen, **W A S D** - move, mouse scroll or **1/2** - zoom in/out, **SPACE** to jump from planets, **R** reset zoom, **P** pause, **Left/Right mouse** shoot.  Normal has max 3 noise loops, Best 5 noise loops.
+**sgame(GPU+CPU)** - very simple game using GLSL without textures, control: **F** fullscreen, **W A S D** - move, mouse scroll or **1/2** - zoom in/out, **SPACE** to jump from planets, **R** reset zoom, **P** pause, **Left/Right mouse** shoot.  Normal version has max 3 noise loops, Best 5 noise loops (also in best max enemy 50 with max bullets 50, normal valus is 25).
 
 *Work very well in wasm, native C++ program has better "image quality"(because GL_ES in browsers).*
 
