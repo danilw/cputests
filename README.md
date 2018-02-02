@@ -24,6 +24,8 @@ sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/
 
 *Work very well in wasm, native C++ program has better "image quality"(because GL_ES in browsers).*
 
+*sgame(best) has bug in **Windows**(noise bugged somehow), try this fixed [wasm_sgame win fix](https://danilw.github.io/cputests/wasm/sgame/best_wfix/sgame.html)*
+
 **opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points), without GLSL. **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
 
 tester     | fps (final scene fps first)
