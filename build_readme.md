@@ -30,6 +30,8 @@ g++ -lGL -lGLU -lglut -std=c++11 opengl_basic.cpp -O3 -o opengl_basic
 
 **sgame**
 ```
+oroginal GLSL code in C/GLSL/myfs.glsl file 
+
 g++ -O3 -lglut -lGLEW -lGL -lm -lGLU -Wall -Wextra -pthread main.cpp
 ```
 
