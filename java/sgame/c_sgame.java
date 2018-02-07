@@ -1,4 +1,5 @@
 package sgame;
+
 import java.util.LinkedList;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -178,7 +179,7 @@ public class c_sgame {
         playzoomtrig = 0;
 
         shifttime = System.currentTimeMillis();
-        
+
         startposxx();
         my_setup();
 
@@ -371,7 +372,7 @@ public class c_sgame {
                             ret = rotate2d(tm2, tm, an);
                             float p1[] = {shippos[0], shippos[1]};
                             float p2[] = {shippos[0] + ret[0], shippos[1] + ret[1]};
-                            float c[] = {dq.get(i).origin.x, dq.get(i).origin.y};
+                            float c[] = {dq.get(i).origin.x - 125, dq.get(i).origin.y - 125};
                             float r = dq.get(i).radiusin;
                             float ret1[] = new float[2];
                             float ret2[] = new float[2];
@@ -515,9 +516,9 @@ public class c_sgame {
     };
 
     boolean shouldRotate;
-    LinkedList<body> bds=new LinkedList<body>();
-    LinkedList<body> bds2=new LinkedList<body>();
-    LinkedList<body> bds3=new LinkedList<body>();
+    LinkedList<body> bds = new LinkedList<body>();
+    LinkedList<body> bds2 = new LinkedList<body>();
+    LinkedList<body> bds3 = new LinkedList<body>();
 
     void my_setup() {
         //some of it unused
@@ -800,8 +801,8 @@ public class c_sgame {
 
         int x0, y0, height;
         // Wheel reports as button 3(scroll up) and button 4(scroll down)
-        int mwh=Mouse.getDWheel();
-            
+        int mwh = Mouse.getDWheel();
+
         if ((mwh > 0) || (mwh < 0)) { // It's a wheel event
             if (paused) {
                 zoomtrig = (float) ((mwh > 0) ? 0.01 * zoom + zoom / 200 : -(0.01 * zoom + zoom / 200));
@@ -835,10 +836,10 @@ public class c_sgame {
         if (animlampbtn) {
 
             mouse[0] = slowmpos[0] = Mouse.getX();;
-            mouse[1] = slowmpos[1] =  Mouse.getY();
+            mouse[1] = slowmpos[1] = Mouse.getY();
         } else {
             mouse[0] = slowmpos[0] = Mouse.getX();;
-            mouse[1] = slowmpos[1] =  Mouse.getY();
+            mouse[1] = slowmpos[1] = Mouse.getY();
         }
 
     }
@@ -851,19 +852,21 @@ public class c_sgame {
             keyboard_up_handler() {
 
         int key = -1;
-        key=Keyboard.isKeyDown(Keyboard.KEY_A)?Keyboard.KEY_A:Keyboard.isKeyDown(Keyboard.KEY_W)?Keyboard.KEY_W:Keyboard.isKeyDown(Keyboard.KEY_D)?Keyboard.KEY_D:Keyboard.isKeyDown(Keyboard.KEY_S)?Keyboard.KEY_S:-1;
-        key=Keyboard.isKeyDown(Keyboard.KEY_P)?Keyboard.KEY_P:Keyboard.isKeyDown(Keyboard.KEY_R)?Keyboard.KEY_R:Keyboard.isKeyDown(Keyboard.KEY_F)?Keyboard.KEY_F:key;
-        
+        key = Keyboard.isKeyDown(Keyboard.KEY_A) ? Keyboard.KEY_A : Keyboard.isKeyDown(Keyboard.KEY_W) ? Keyboard.KEY_W : Keyboard.isKeyDown(Keyboard.KEY_D) ? Keyboard.KEY_D : Keyboard.isKeyDown(Keyboard.KEY_S) ? Keyboard.KEY_S : -1;
+        key = Keyboard.isKeyDown(Keyboard.KEY_P) ? Keyboard.KEY_P : Keyboard.isKeyDown(Keyboard.KEY_R) ? Keyboard.KEY_R : Keyboard.isKeyDown(Keyboard.KEY_F) ? Keyboard.KEY_F : key;
+
         switch (key) {
             case Keyboard.KEY_A:
                 if (keystates['d'] || keystates['d']) {
                     keystates['d'] = keystates['D'] = false;
-                }keystates['a'] = keystates['A'] = true;
+                }
+                keystates['a'] = keystates['A'] = true;
                 break;
             case Keyboard.KEY_D:
                 if (keystates['a'] || keystates['A']) {
                     keystates['a'] = keystates['A'] = false;
-                }keystates['d'] = keystates['D'] = true;
+                }
+                keystates['d'] = keystates['D'] = true;
                 break;
             case Keyboard.KEY_W:
                 if (keystates['s'] || keystates['S']) {
@@ -907,15 +910,15 @@ public class c_sgame {
                 paused = !paused;
 
                 if (paused) {
-                    shifttime = (System.currentTimeMillis()  - shifttime);
+                    shifttime = (System.currentTimeMillis() - shifttime);
                 } else {
-                    shifttime = (System.currentTimeMillis() - shifttime) ;
+                    shifttime = (System.currentTimeMillis() - shifttime);
                 }
                 ;
                 break;
 
             default:
-                keystates['w'] = keystates['W'] =keystates['s'] = keystates['S'] =keystates['a'] = keystates['A'] =keystates['d'] = keystates['D'] = false;
+                keystates['w'] = keystates['W'] = keystates['s'] = keystates['S'] = keystates['a'] = keystates['A'] = keystates['d'] = keystates['D'] = false;
                 break;
         }
     }
@@ -1275,8 +1278,8 @@ public class c_sgame {
 
             for (int i = 0; i < bds2.size(); i++) {
                 if (bds2.get(i).iterator == 0) {
-                    bds2.get(i).origin.x = shippos[0];
-                    bds2.get(i).origin.y = shippos[1];
+                    bds2.get(i).origin.x = shippos[0] + 125;
+                    bds2.get(i).origin.y = shippos[1] + 125;
                 };
                 if (bds2.get(i).iterator == 3) {
                     bds2.get(i).origin.x = planetpos1[0] + 2500 - 17;
@@ -1542,8 +1545,8 @@ public class c_sgame {
                         if (isnew[bds2.get(i).iterator - 10]) {
                             isnew[bds2.get(i).iterator - 10] = bds2.get(i).hit = false;
                         }
-                        bds2.get(i).origin.x = bulletposx[bds2.get(i).iterator - 10];
-                        bds2.get(i).origin.y = bulletposy[bds2.get(i).iterator - 10];
+                        bds2.get(i).origin.x = bulletposx[bds2.get(i).iterator - 10] - 125;
+                        bds2.get(i).origin.y = bulletposy[bds2.get(i).iterator - 10] - 125;
                         bds2.get(i).heading.x = bullethdx[bds2.get(i).iterator - 10];
                         bds2.get(i).heading.y = bullethdy[bds2.get(i).iterator - 10];
                         bds2.get(i).isstatic = (bulletexpl[bds2.get(i).iterator - 10] && (exltimer[bds2.get(i).iterator - 10] > 4 * PI));
@@ -1557,8 +1560,8 @@ public class c_sgame {
 
                 if ((bds2.get(i).iterator >= maxbullets + 10) && (bds2.get(i).iterator < maxbullets + 10 + maxen)) {
                     if (en1alive[bds2.get(i).iterator - 10 - maxbullets]) {
-                        bds2.get(i).origin.x = en1posx[bds2.get(i).iterator - 10 - maxbullets] + 125 - 17;
-                        bds2.get(i).origin.y = en1posy[bds2.get(i).iterator - 10 - maxbullets] + 125 - 17;
+                        bds2.get(i).origin.x = en1posx[bds2.get(i).iterator - 10 - maxbullets] - 17;
+                        bds2.get(i).origin.y = en1posy[bds2.get(i).iterator - 10 - maxbullets] - 17;
                         bds2.get(i).heading.x = en1thdx[bds2.get(i).iterator - 10 - maxbullets];
                         bds2.get(i).heading.y = en1thdy[bds2.get(i).iterator - 10 - maxbullets];
                         bds2.get(i).miilive = true;
@@ -1569,8 +1572,8 @@ public class c_sgame {
                 }
                 if ((bds2.get(i).iterator >= maxbullets + 10 + maxen)) {
                     if (en2alive[bds2.get(i).iterator - 10 - maxbullets - maxen]) {
-                        bds2.get(i).origin.x = en2posx[bds2.get(i).iterator - 10 - maxbullets - maxen] + 125 - 17;
-                        bds2.get(i).origin.y = en2posy[bds2.get(i).iterator - 10 - maxbullets - maxen] + 125 - 17;
+                        bds2.get(i).origin.x = en2posx[bds2.get(i).iterator - 10 - maxbullets - maxen] - 17;
+                        bds2.get(i).origin.y = en2posy[bds2.get(i).iterator - 10 - maxbullets - maxen] - 17;
                         bds2.get(i).heading.x = en2thdx[bds2.get(i).iterator - 10 - maxbullets - maxen];
                         bds2.get(i).heading.y = en2thdy[bds2.get(i).iterator - 10 - maxbullets - maxen];
                         bds2.get(i).miilive = true;
@@ -1585,8 +1588,8 @@ public class c_sgame {
             for (int i = 0; i < bds2.size(); i++) {
                 if ((bds2.get(i).iterator >= 10) && (bds2.get(i).iterator < maxbullets + 10)) {
                     if (bulletalive[bds2.get(i).iterator - 10]) {
-                        bulletposx[bds2.get(i).iterator - 10] = bds2.get(i).origin.x;
-                        bulletposy[bds2.get(i).iterator - 10] = bds2.get(i).origin.y;
+                        bulletposx[bds2.get(i).iterator - 10] = bds2.get(i).origin.x + 125;
+                        bulletposy[bds2.get(i).iterator - 10] = bds2.get(i).origin.y + 125;
                         if ((bds2.get(i).hit) && (bds2.get(bds2.get(i).hitid).iterator == -1)) {
                             bds2.get(i).hit = false;
                             float ret[] = new float[2];
@@ -1675,8 +1678,8 @@ public class c_sgame {
                     if ((keystates['w'] || keystates['W']) || (keystates['s'] || keystates['S'])) {
                         bds.get(i).heading.y += shipth[1] - shipthwgr[1];
                     }
-                    shippos[0] = bds.get(i).origin.x;
-                    shippos[1] = bds.get(i).origin.y;
+                    shippos[0] = bds.get(i).origin.x - 125;
+                    shippos[1] = bds.get(i).origin.y - 125;
                     shipthwgr[0] = (float) (Math.abs(shipth[0]) > 19.9 ? (shipth[0] > 0 ? shipth[0] - 0.25 : shipth[0] + 0.25) : shipth[0]);
                     shipthwgr[1] = (float) (Math.abs(shipth[1]) > 19.9 ? (shipth[1] > 0 ? shipth[1] - 0.25 : shipth[1] + 0.25) : shipth[1]);
                     shipthwgrt[0] = bds.get(i).heading.x;
@@ -1827,9 +1830,8 @@ redisplay(int value) {
         // glUseProgram(prog);
         width = Display.getWidth();
         height = Display.getHeight();
-        
 
-        ticks =  System.currentTimeMillis() ;
+        ticks = System.currentTimeMillis();
 
         if (frames == 0) {
             last_time = ticks;
@@ -1847,16 +1849,16 @@ redisplay(int value) {
         scrcenter[1] = height / 2 - (radius * zoom) / 2;
         allkeys_movement();
         shipmovwithgrav();
-        cameraposs((int)width, (int)height);
+        cameraposs((int) width, (int) height);
         staticplanetsmov();
         spawnenemy(pass);
         if (paused) {
             program.setUniform("time", (float) (shifttime / 1000.0));
         } else {
             program.setUniform("time", (float) ((ticks - shifttime) / 1000.0));
-            
+
         }
-        program.setUniform("iResolution", (float)width, (float)height, (float) 1.0);
+        program.setUniform("iResolution", (float) width, (float) height, (float) 1.0);
 
         program.setUniform("iMouse", (int) mouse[0], (int) mouse[1], (int) mouse[2], (int) mouse[3]);
 
