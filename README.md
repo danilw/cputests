@@ -35,7 +35,7 @@ chrome     |   the slowest
 wasm  chrome    |   fast, but GL_ES (with bug on windows)
 wasm  firefox    |   fast, but GL_ES (with bug on windows)
 
-*Note* I think my "array logic" in thsi *sgame* project bugged, becuase java and javascript "deque" lists shift all "object coordinates" by half of their radius(look in js or java code variable *fixx*(also added few more +/- half of radius in code)) :)
+*Note* I think my "array logic" in *sgame* project bugged, becuase java and javascript "deque" lists shift all "object coordinates" by half of their radius(look in js or java code variable *fixx*(also added few more +/- half of radius in code)) :)
 
 **opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points), without GLSL. **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
 
