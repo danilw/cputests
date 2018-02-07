@@ -31,11 +31,11 @@ g++ -lGL -lGLU -lglut -std=c++11 opengl_basic.cpp -O3 -o opengl_basic
 **sgame**
 
 original GLSL code are GLSL/myfs.glsl file 
-
-GLSL code can use "prerender" noise texture, uncomment all "loading" texture functions in main.cpp file and texture code in myfs.glsl file and use glsl/noise.png file (when I test, texture give me +5% better performance)
 ```
 g++ -O3 -lglut -lGLEW -lGL -lm -lGLU -Wall -Wextra -pthread main.cpp
 ```
+
+GLSL code can use "prerender" noise texture, uncomment all "loading" texture functions in main.cpp file and texture code in myfs.glsl file and use glsl/noise.png file (when I test, texture give me +5% better performance)
 
 WebAssembly Emscripten compiler
 --------------------
