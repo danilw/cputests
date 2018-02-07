@@ -14,8 +14,8 @@ terrain   | [wasm_terrain](https://danilw.github.io/cputests/wasm/terrain/terrai
 render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/render.html)      |  [js_render](https://danilw.github.io/cputests/js/render/render.html)    
  render_mini  |     [wasm_render_mini](https://danilw.github.io/cputests/wasm/render_mini/render_mini.html)      |  [js_render_mini](https://danilw.github.io/cputests/js/render_mini.html)
   opengl_basic  |     [wasm_opengl_basic](https://danilw.github.io/cputests/wasm/opengl_basic/opengl_basic.html)      |  [js_opengl_basic](https://danilw.github.io/cputests/js/opengl_basic.html)
-sgame(normal) |  [wasm_sgame n](https://danilw.github.io/cputests/wasm/sgame/normal/sgame.html)   | (latter)
-sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)  | (latter)
+sgame(normal) |  [wasm_sgame n](https://danilw.github.io/cputests/wasm/sgame/normal/sgame.html)   | [js_sgame n](https://danilw.github.io/cputests/js/sgame/normal/sgame.html)
+sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)  | [js_sgame b_wfix](https://danilw.github.io/cputests/js/sgame/best_wfix/sgame.html)
  
 
 ### Result
@@ -28,13 +28,14 @@ sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/
 
 tester     | result
 -------- | ----------- 
-firefox |  --
-chrome     |   --
+firefox |  the slowest
+chrome     |   the slowest
  java    |    2x slower then wasm
  C++    |    the fastest
 wasm  chrome    |   fast, but GL_ES (with bug on windows)
 wasm  firefox    |   fast, but GL_ES (with bug on windows)
 
+*Note* I think my "array logic" bugged, becuase java and javascript "deque" lists shift all "object coordinates" by half of their radius(look in js or java code variable *fixx*(also added few more +/- half of radius in code)) :)
 
 **opengl_basic(GPU+CPU)** - animated OpenGL scene (1.3kk points change position each frame(final scene (P and D chars) use 2.4kk points), without GLSL. **note** windows(OS) webbrowsers with wasm do not have OpenGL support, wasm was tested only on linux(it work)
 
