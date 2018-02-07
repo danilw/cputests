@@ -372,7 +372,10 @@ public class c_sgame {
                             ret = rotate2d(tm2, tm, an);
                             float p1[] = {shippos[0], shippos[1]};
                             float p2[] = {shippos[0] + ret[0], shippos[1] + ret[1]};
-                            float c[] = {dq.get(i).origin.x - 125, dq.get(i).origin.y - 125};
+                            int fixx=0;
+                            if((dq.get(i).iterator<10))fixx=125;
+                            if((dq.get(i).iterator==-1))fixx=250;
+                            float c[] = {dq.get(i).origin.x-fixx , dq.get(i).origin.y-fixx };
                             float r = dq.get(i).radiusin;
                             float ret1[] = new float[2];
                             float ret2[] = new float[2];
@@ -397,7 +400,7 @@ public class c_sgame {
 
                             //after fix
                             if (rr) {
-                                yyy = angle2d(dq.get(i).origin.x, dq.get(i).origin.y, shippos[0], shippos[1]);
+                                yyy = angle2d(dq.get(i).origin.x-fixx, dq.get(i).origin.y-fixx, shippos[0], shippos[1]);
 
                                 boolean cx = false;
                                 if ((yyy > -PI / 2) && (yyy < PI / 2)) {
