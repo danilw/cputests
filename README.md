@@ -17,6 +17,9 @@ render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/re
 sgame(normal) |  [wasm_sgame n](https://danilw.github.io/cputests/wasm/sgame/normal/sgame.html)   | [js_sgame n](https://danilw.github.io/cputests/js/sgame/normal/sgame.html)
 sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)  | [js_sgame b_wfix](https://danilw.github.io/cputests/js/sgame/best_wfix/sgame.html)
  
+### Update Chrome 69(Sep 2018)
+
+now all wasm in chrome 50% up to 100% slower then it was before, wasm in *Firefox* 2-3x faster then in *Chrome 69*
 
 ### Result
 
