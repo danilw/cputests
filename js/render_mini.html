@@ -89,9 +89,9 @@
                 }
                 document.getElementById("result").textContent = "fps:" + fps + " , timetocalc:" + Gg2.frame_timetocalc + " ,  max:" + Gg2.max_timetocalc + " , min:" + Gg2.min_timetocalc;
                 Gg2.start();
+                requestAnimationFrame(js_draw);
             }
             js_draw();
-            setInterval(js_draw, 0);
         </script>
 
 
