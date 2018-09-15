@@ -1,41 +1,37 @@
+	const {sqrt, max, min, abs, round, floor} = Math;
+	class Vec {
 
+		constructor(x, y, z) {
+			this.x = x
+			this.y = y
+			this.z = z
+			this.length = sqrt(x * x + y * y + z * z)
+		}
+		dotProduct(v) {
+            return this.x * v.x + this.y * v.y + this.z * v.z
+        }
 
-Vec.prototype.x;
-Vec.prototype.y;
-Vec.prototype.z;
-function Vec(x, y, z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+        add(v) {
+            return new Vec(this.x + v.x, this.y + v.y, this.z + v.z)
+        }
 
-    Vec.prototype.length = function () {
-        return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
-    }
+        subtract(v) {
+            return new Vec(this.x - v.x, this.y - v.y, this.z - v.z)
+        }
 
-    Vec.prototype.dotProduct = function (v) {
-        return this.x * v.x + this.y * v.y + this.z * v.z;
-    }
+        multiply(a) {
+            return new Vec(this.x * a, this.y * a, this.z * a)
+        }
 
-    Vec.prototype.add = function (v) {
-        return new Vec(this.x + v.x, this.y + v.y, this.z + v.z);
-    }
+        normalise() {
+            const a = (1.0 / this.length)
+            return new Vec(this.x * a, this.y * a, this.z * a)
+        }
 
-    Vec.prototype.subtract = function (v) {
-        return new Vec(this.x - v.x, this.y - v.y, this.z - v.z);
-    }
-
-    Vec.prototype.multiply = function (a) {
-        return new Vec(this.x * a, this.y * a, this.z * a);
-    }
-
-    Vec.prototype.normalise = function () {
-        return this.multiply(1.0 / this.length());
-    }
-
-    Vec.prototype.crossProduct = function (v) {
-        return new Vec(this.y * v.z - this.z * v.y, this.z * v.x - this.x * v.z, this.x * v.y - this.y * v.x);
-    }
-}
+        crossProduct(v) {
+            return new Vec(this.y * v.z - this.z * v.y, this.z * v.x - this.x * v.z, this.x * v.y - this.y * v.x)
+        }
+	}
 
 
 
@@ -95,7 +91,7 @@ Gg2.min_timetocalc = 1000000000;
 Gg2.max_timetocalc = 0;
 
 Gg2.getDistToSphere = function (pt, radius) {
-    return pt.length() - radius;
+    return pt.length - radius;
 }
 
 Gg2.getDistToBox = function (pt, halfSize) {
