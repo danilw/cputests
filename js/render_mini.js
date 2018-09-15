@@ -97,7 +97,7 @@ Gg2.getDistToSphere = function (pt, radius) {
 Gg2.getDistToBox = function (pt, halfSize) {
     return new Vec(Math.max(0, Math.abs(pt.x) - halfSize.x),
             Math.max(0, Math.abs(pt.y) - halfSize.y),
-            Math.max(0, Math.abs(pt.z) - halfSize.z)).length();
+            Math.max(0, Math.abs(pt.z) - halfSize.z)).length;
 }
 
 Gg2.tilePrimitive = function (pt, tileSize) {
