@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <title>render_mini</title>
@@ -15,11 +16,6 @@
         <script type="text/javascript" src="render_mini.js">
         </script>
         <script type="text/javascript">
-            var c = document.getElementById("myCanvas");
-            c.setAttribute("width", "" + (Gg2.viewWidth * Gg2.viewScaleX));
-            c.setAttribute("height", "" + (Gg2.viewHeight * Gg2.viewScaleY));
-
-            image = c.getContext("2d");
 
 
             function processKeyEvent(e) {
@@ -77,20 +73,43 @@
                 return true;
             }
 
-            function js_draw() {
-                for (var i = 0; i < Gg2.viewWidth; i++) {
-                    for (var j = 0; j < Gg2.viewHeight; j++) {
-                        for (var o_y = 0; o_y < Gg2.viewScaleY; ++o_y)
-                            for (var o_x = 0; o_x < Gg2.viewScaleX; ++o_x) {
-                                image.fillStyle = "rgb(" + (Gg2.pixels[j * Gg2.viewWidth + i] >> 16) + "," + ((Gg2.pixels[j * Gg2.viewWidth + i] >> 8) - ((Gg2.pixels[j * Gg2.viewWidth + i] >> 16) << 8)) + "," + ((Gg2.pixels[j * Gg2.viewWidth + i]) - ((Gg2.pixels[j * Gg2.viewWidth + i] >> 8) << 8)) + ")";
-                                image.fillRect(Gg2.viewScaleX * i + o_x, Gg2.viewScaleY * j + o_y, 1, 1);
+    const viewWidth = 300
+	const viewHeight = 200
+	const viewScaleX = 3
+	const viewScaleY = 3
+	let canvaswidth = viewWidth*viewScaleX
+	let canvasheight = viewHeight*viewScaleY
+	var c = document.getElementById("myCanvas");
+    c.setAttribute("width", "" + canvaswidth);
+    c.setAttribute("height", "" + canvasheight);
+
+   image = c.getContext('2d', {alfa:false});
+
+		const pixels = new Uint32Array(new ArrayBuffer(viewWidth * viewHeight * 4))
+		
+			let buffer = new Uint8ClampedArray(new ArrayBuffer(canvaswidth*canvasheight*4))
+		
+	const js_draw = () => {	
+		for (let i = 0; i < viewWidth; i++) {
+            for (let j = 0, s; j < viewHeight; j++) {
+            	s = Gg2.pixels[j * viewWidth + i]
+                        for (let o_y = 0; o_y < viewScaleY; ++o_y)
+                            for (let o_x = 0; o_x < viewScaleX; ++o_x) {
+                            	let n = (viewScaleX * i + o_x) * 4 + (viewScaleY * j + o_y) * (viewWidth*viewScaleX*4)
+                            	buffer[n+0] = s >> 16
+                            	buffer[n+1] = (s >> 8) - (buffer[n] << 8)
+                            	buffer[n+2] = s - ((s >> 8) << 8)
+                            	buffer[n+3] = 0xff
                             }
                     }
                 }
-                document.getElementById("result").textContent = "fps:" + fps + " , timetocalc:" + Gg2.frame_timetocalc + " ,  max:" + Gg2.max_timetocalc + " , min:" + Gg2.min_timetocalc;
-                Gg2.start();
-                requestAnimationFrame(js_draw);
-            }
+                
+        image.putImageData(new ImageData(buffer, canvaswidth, canvasheight), 0, 0)
+        Gg2.run();
+        document.getElementById("result").textContent = "fps:" + fps + " , timetocalc:" + Gg2.frame_timetocalc + " ,  max:" + Gg2.max_timetocalc + " , min:" + Gg2.min_timetocalc;
+        requestAnimationFrame(js_draw);
+        
+	}
             js_draw();
         </script>
 
