@@ -62,9 +62,9 @@ Edit (source code) *viewWidth* and *viewHeight* to change render resolution (cur
 
 tester     | timetocalc(msec) 
 -------- | ----------- 
-firefox |  700-1000
-js45   |  1000-1200
-chrome     |  5500-6500
+firefox |  120-150 (fps 6)
+js45   |  100-120 
+chrome     |  100-135 (fps 10)
  java    |    90-210 (fps 8)
  C++    |    80-120 (fps 8)
 wasm  chrome    |   120-150 (fps 6)
