@@ -3,6 +3,8 @@ wasm/js/java/C++ CPU tests
 
 **what is it**- *Comparison of calculation speed and drawing speed*
 
+# This is just some random code I made to see how it works while was learning WASM and WebGL/OpenGL, this has no real use and display nothing
+
 *todo* - this is done, new projects next
 
 ### Live test
@@ -13,7 +15,7 @@ basic |   [wasm_basic](https://danilw.github.io/cputests/wasm/basic/basic.html) 
 terrain   | [wasm_terrain](https://danilw.github.io/cputests/wasm/terrain/terrain.html)        | [js_terrain](https://danilw.github.io/cputests/js/terrain.html)
 render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/render.html)      |  [js_render](https://danilw.github.io/cputests/js/render/render.html)    
  render_mini  |     [wasm_render_mini](https://danilw.github.io/cputests/wasm/render_mini/render_mini.html)      |  [js_render_mini](https://danilw.github.io/cputests/js/render_mini.html)
-  opengl_basic  |     [wasm_opengl_basic](https://danilw.github.io/cputests/wasm/opengl_basic/opengl_basic.html)      |  [js_opengl_basic](https://danilw.github.io/cputests/js/opengl_basic.html)
+  opengl_basic  |     [wasm_opengl_basic](https://danilw.github.io/cputests/wasm/opengl_basic/opengl_basic.html)      |  [js_opengl_basic](https://danilw.github.io/cputests/js/opengl_basic.html), [vertex shader port](https://www.vertexshaderart.com/art/8AQFD78CWiZsN4phd)
 sgame(normal) |  [wasm_sgame n](https://danilw.github.io/cputests/wasm/sgame/normal/sgame.html)   | [js_sgame n](https://danilw.github.io/cputests/js/sgame/normal/sgame.html)
 sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)  | [js_sgame b_wfix](https://danilw.github.io/cputests/js/sgame/best_wfix/sgame.html)
 
