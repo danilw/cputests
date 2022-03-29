@@ -67,8 +67,8 @@ addMethod(program, "setUniform", function (e, a, b, c, d) {
     uniforms[e] = [a, b, c, d];
 })
 
-var maxbullets = 25; //50 best 25 non
-var maxen = 25; //25 non best 50 best
+var maxbullets = 50; //50 best 25 non
+var maxen = 50; //25 non best 50 best
 
 
 function initen() {
@@ -229,7 +229,7 @@ function startposxx() {
 
 function initglslvals(timexxx) {
     fast = false;
-    best = false;
+    best = true;
     fullscreen = false;
     en3hit = false;
     wwh = false;
@@ -1410,14 +1410,16 @@ function allkeys_movement() {
     var y = 0;
     var maxx = 10;
 
-    if (Keyboard.isKeyDown('1')) {//Keyboard.KEY_1
+    if (Keyboard.isKeyDown('1')||gscrolldown>0.0001) {//Keyboard.KEY_1
+        gscrolldown=gscrolldown-1.0/10.0>0?gscrolldown-1.0/10.0:0;
         if (paused) {
             zoomtrig += 0.0005 * zoom + zoom / 200;
         } else {
             playzoomtrig += 0.0005 * zoom + playzoom / 200;
         }
     }
-    if (Keyboard.isKeyDown('2')) {//Keyboard.KEY_2
+    if (Keyboard.isKeyDown('2')||gscrollup>0.0001) {//Keyboard.KEY_2
+      gscrollup=gscrollup-1.0/10.0>0?gscrollup-1.0/10.0:0;
         if (paused) {
             zoomtrig -= 0.0005 * zoom + 0.1 * zoom / 200;
         } else {
@@ -1816,7 +1818,7 @@ function display(timexx, Display) {
     //need pass first sec of time
     if (ticks - last_time >= 1000) {
         fps = 1000.0 * frames / (ticks - last_time);
-        document.getElementById("fps").innerHTML = "FPS: " + Number((fps).toFixed(1));
+        //document.getElementById("fps").innerHTML = "FPS: " + Number((fps).toFixed(1));
         ;
         pass = (ticks - last_time) / (1000. * frames);
         frames = 0;

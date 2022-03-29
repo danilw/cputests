@@ -271,5 +271,3 @@ function getCapacity(capacity) {
             Math.max(16, capacity), 1073741824)
     );
 }
-
-module.exports = Deque;
