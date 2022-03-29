@@ -3,7 +3,7 @@ wasm/js/java/C++ CPU tests
 
 **what is it**- *Comparison of calculation speed and drawing speed*
 
-# This is just some random code I made to see how it works while was learning WASM and WebGL/OpenGL, this has no real use and display nothing
+# This is just some random code I made to see how it works(in 2018) while was learning WASM and WebGL/OpenGL, this has no real use and display nothing
 
 *todo* - this is done, new projects next
 
