@@ -17,7 +17,7 @@ render     | [wasm_render](https://danilw.github.io/cputests/wasm/render/html/re
  render_mini  |     [wasm_render_mini](https://danilw.github.io/cputests/wasm/render_mini/render_mini.html)      |  [js_render_mini](https://danilw.github.io/cputests/js/render_mini.html)
   opengl_basic  |     [wasm_opengl_basic](https://danilw.github.io/cputests/wasm/opengl_basic/opengl_basic.html)      |  [js_opengl_basic](https://danilw.github.io/cputests/js/opengl_basic.html), [vertex shader port](https://www.vertexshaderart.com/art/8AQFD78CWiZsN4phd)
 sgame(normal) |  [wasm_sgame n](https://danilw.github.io/cputests/wasm/sgame/normal/sgame.html)   | [js_sgame n](https://danilw.github.io/cputests/js/sgame/normal/sgame.html)
-sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)  | [js_sgame b_wfix](https://danilw.github.io/cputests/js/sgame/best_wfix/sgame.html)
+sgame(best) |  [wasm_sgame b](https://danilw.github.io/cputests/wasm/sgame/best/sgame.html)  | [js_sgame b_wfix](https://danilw.github.io/cputests/js/sgame/best_wfix/sgame.html) [same but without twgl library](https://danilw.github.io/GLSL-howto/sgame_ntwgl/sgame.html)
 
 ### Result
 
